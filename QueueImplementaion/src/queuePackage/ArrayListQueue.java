@@ -8,22 +8,28 @@ ArrayList<Integer> ArrListQueue=new ArrayList<Integer>();
 void enque(int a)
 {
 	ArrListQueue.add(a);
+	System.out.println("Element Added " +a);
 }
 
 void deque()
 {
-	ArrListQueue.remove(0);
+	if(ArrListQueue.isEmpty())
+	{
+		System.out.println("Nothing To Remove: ArrayList Queue Is Empty");
+	}
+	else
+		System.out.println("Element Removed: "+ArrListQueue.remove(0));
 }
 
 void display()
 {
 	if(ArrListQueue.isEmpty())
 	{
-		System.out.println("Empty Queue");
+		System.out.println("ArrayList Queue Is Empty");
 	}
 	else
 	{
-	System.out.println("Queue Has:");
+	System.out.println("ArrayList Queue Has:");
 	for(Integer obj:ArrListQueue)
 	{
 		System.out.println(obj);
@@ -32,6 +38,6 @@ void display()
 }
 
 void size(){
-	System.out.println(ArrListQueue.size());
+	System.out.println("Size Of ArrayList Queue: "+ ArrListQueue.size());
 }
 }

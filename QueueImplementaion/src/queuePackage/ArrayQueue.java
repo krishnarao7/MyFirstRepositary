@@ -17,7 +17,7 @@ void enque(int a)
 		arr[rear+1]=a;
 		rear++;
 	}
-//	System.out.println("On Adding " +a+"size is ");
+	System.out.println("Element Added " +a);
 //	size();
 }
 
@@ -28,10 +28,10 @@ void display()
 	//size();
 	if(front==-1 && rear==-1)
 	{
-		System.out.println("Empty Queue");
+		System.out.println("Array Queue Is Empty");
 	}
 	else{
-		System.out.println("Queue Has:");
+		System.out.println("Array Queue Has:");
 	while (count<=rear)
 	{
 		System.out.println(arr[count]);
@@ -46,7 +46,7 @@ void deque()
 	//System.out.println(" Front "+front+"  Rear "+rear);
 	if(front==-1 && rear==-1)
 	{
-		System.out.println("Nothing To Remove: Empty Queue");
+		System.out.println("Nothing To Remove: Empty Array Queue");
 	}
 	else{
 		if(front==rear)
@@ -73,7 +73,7 @@ void size()
 		size=1;
 	else
 	size=(rear-front)+1;
- System.out.println("Size Of Queue: "+size);
+ System.out.println("Size Of Array Queue: "+size);
 	
 }
 
