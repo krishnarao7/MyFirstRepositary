@@ -6,40 +6,42 @@ import java.util.LinkedList;
 public class LinkedListQueue implements Queue {
 	LinkedList<Integer> LinkListQueue=new LinkedList<Integer>();
 	
-	public void enque(int a)
+	public boolean enque(int a)
 	{
 		LinkListQueue.addLast(a);
-		return;
+		return true;
 	}
 
-	public void deque()
+	public int deque()
 	{
 		if(LinkListQueue.isEmpty())
 		{
-			System.out.println("Nothing To Remove: Linked List Queue Is Empty ");
+			return -1;
 		}
 		else
-			System.out.println("Element Removed: "+LinkListQueue.remove(0));
+			return LinkListQueue.remove(0);
 	}
 
-	public void display()
+	public boolean display()
 	{
 		if(LinkListQueue.isEmpty())
 		{
-			System.out.println("Linked List Queue Is Empty ");
+			return false;
 		}
 		else
 		{
-		System.out.println("Linked List Queue Has:");
+		//System.out.println("Linked List Queue Has:");
 		for(Integer obj:LinkListQueue)
 		{
 			System.out.println(obj);
 		}
+		return true;
 		}
+		
 	}
 
 	
-	public void size(){
-		System.out.println("Size Of Linked List Queue: "+LinkListQueue.size());
+	public int size(){
+		return LinkListQueue.size();
 	}
 }

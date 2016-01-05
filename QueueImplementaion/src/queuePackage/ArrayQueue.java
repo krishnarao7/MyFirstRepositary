@@ -3,10 +3,9 @@ package queuePackage;
 public class ArrayQueue implements Queue{
 int[] arr=new int [10];
 int rear=-1,front=-1;
- public void enque(int a)
+ public boolean enque(int a)
 {
-	//System.out.println(" Front "+front+"  Rear "+rear);
-	//size();
+if(size()<10){
 	if(front==-1 && rear==-1) 
 	{
 		arr[rear+1]=a;
@@ -17,48 +16,53 @@ int rear=-1,front=-1;
 		arr[rear+1]=a;
 		rear++;
 	}
-	System.out.println("Element Added " +a);
-//	size();
-	return;
+	return true;
+}else 
+	return false;
+
 }
 
-public void display()
+public boolean display()
 {
 	int count;
 	count=front;
 	//size();
 	if(front==-1 && rear==-1)
 	{
-		System.out.println("Array Queue Is Empty");
+		return false;
 	}
 	else{
-		System.out.println("Array Queue Has:");
+		
 	while (count<=rear)
 	{
 		System.out.println(arr[count]);
 		count++;
 	}
+	return true;
 	}
 }
 
-public void deque()
+public int deque()
 {
-	
+	int dq;
 	//System.out.println(" Front "+front+"  Rear "+rear);
 	if(front==-1 && rear==-1)
 	{
-		System.out.println("Nothing To Remove: Empty Array Queue");
+		return -1;
 	}
 	else{
 		if(front==rear)
 		{
-			System.out.println("Element Removed: "+arr[front]);
+			//System.out.println("Element Removed: "+arr[front]);
+			dq=arr[front];
 			front=rear=-1;
+			return dq;
 		}
 		else
 		{
-			System.out.println("Element Removed: "+arr[front]);
+			dq=arr[front];
 			front++;
+			return dq;
 		}
 		
 				
@@ -67,14 +71,14 @@ public void deque()
 	
 }
 
-public void size()
+public int size()
 {
 	int size;
 	if(front==rear && front==-1)
-		size=0;
+		return size=0;
 	else
 	size=(rear-front)+1;
- System.out.println("Size Of Array Queue: "+size);
+return size;
 	
 }
 
