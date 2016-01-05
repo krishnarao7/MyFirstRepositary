@@ -1,9 +1,9 @@
 package queuePackage;
 
-public class ArrayQueue {
+public class ArrayQueue implements Queue{
 int[] arr=new int [10];
 int rear=-1,front=-1;
-void enque(int a)
+ public void enque(int a)
 {
 	//System.out.println(" Front "+front+"  Rear "+rear);
 	//size();
@@ -19,9 +19,10 @@ void enque(int a)
 	}
 	System.out.println("Element Added " +a);
 //	size();
+	return;
 }
 
-void display()
+public void display()
 {
 	int count;
 	count=front;
@@ -40,7 +41,7 @@ void display()
 	}
 }
 
-void deque()
+public void deque()
 {
 	
 	//System.out.println(" Front "+front+"  Rear "+rear);
@@ -66,11 +67,11 @@ void deque()
 	
 }
 
-void size()
+public void size()
 {
 	int size;
-	if(front==rear && front==0)
-		size=1;
+	if(front==rear && front==-1)
+		size=0;
 	else
 	size=(rear-front)+1;
  System.out.println("Size Of Array Queue: "+size);

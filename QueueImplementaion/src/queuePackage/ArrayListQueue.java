@@ -2,16 +2,17 @@ package queuePackage;
 
 import java.util.ArrayList;
 
-public class ArrayListQueue {
+public class ArrayListQueue implements Queue {
 ArrayList<Integer> ArrListQueue=new ArrayList<Integer>();
 
-void enque(int a)
+public void enque(int a)
 {
 	ArrListQueue.add(a);
 	System.out.println("Element Added " +a);
+	return;
 }
 
-void deque()
+public void deque()
 {
 	if(ArrListQueue.isEmpty())
 	{
@@ -21,7 +22,7 @@ void deque()
 		System.out.println("Element Removed: "+ArrListQueue.remove(0));
 }
 
-void display()
+public void display()
 {
 	if(ArrListQueue.isEmpty())
 	{
@@ -37,7 +38,10 @@ void display()
 	}
 }
 
-void size(){
+public void size(){
+	/*if (ArrListQueue.isEmpty())
+		System.out.println("Size Of ArrayList Queue is 0");
+	else*/
 	System.out.println("Size Of ArrayList Queue: "+ ArrListQueue.size());
 }
 }

@@ -3,16 +3,16 @@ package queuePackage;
 
 import java.util.LinkedList;
 
-public class LinkedListQueue {
+public class LinkedListQueue implements Queue {
 	LinkedList<Integer> LinkListQueue=new LinkedList<Integer>();
 	
-	void enque(int a)
+	public void enque(int a)
 	{
 		LinkListQueue.addLast(a);
-		System.out.println("Element Added " +a);
+		return;
 	}
 
-	void deque()
+	public void deque()
 	{
 		if(LinkListQueue.isEmpty())
 		{
@@ -22,7 +22,7 @@ public class LinkedListQueue {
 			System.out.println("Element Removed: "+LinkListQueue.remove(0));
 	}
 
-	void display()
+	public void display()
 	{
 		if(LinkListQueue.isEmpty())
 		{
@@ -39,7 +39,7 @@ public class LinkedListQueue {
 	}
 
 	
-	void size(){
+	public void size(){
 		System.out.println("Size Of Linked List Queue: "+LinkListQueue.size());
 	}
 }
