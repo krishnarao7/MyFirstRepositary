@@ -5,7 +5,7 @@ public class EComWebsite {
 	PaymentMethod pm;
 	int price;
 	
-void choosePaymentMethod(int i) 
+boolean choosePaymentMethod(int i) 
 {
 	if (i==1) 
 		pm=new DebitCardPayment();
@@ -15,7 +15,11 @@ void choosePaymentMethod(int i)
 		pm= new NetBanking();
 	else if (i==4)
 		pm=new CODPayment();
-}
+	else
+		return false;
+	
+	return true;
+	}
 
 void makePayment(int price)
 {
